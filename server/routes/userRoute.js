@@ -5,24 +5,24 @@ const User = require('../models/userSchema')
 const router = express.Router();
 
 
-router.get('/createadmin', async (req, res) => {
-    try {
-      const user = new User({ 
-        fullname: 'Ranoua',
-        email: 'ranoua23@gmail.com',
-        password: '1234',
-        isAdmin: true,
-      });
-      const newUser = await user.save();
-      res.send(newUser);
-    } catch (error) {
-      res.send({ message: error.message });
-    }
-  });
+// router.get('/createadmin', async (req, res) => {
+//     try {
+//       const user = new User({ 
+//         fullname: 'Ranoua',
+//         email: 'ranoua23@gmail.com',
+//         password: '1234',
+//         isAdmin: true,
+//       });
+//       const newUser = await user.save();
+//       res.send(newUser);
+//     } catch (error) {
+//       res.send({ message: error.message });
+//     }
+//   });
 
 
 router.post('/signin', async(req,res)=>{
-    const signinUser = await user.findOne({
+    const signinUser = await User.findOne({
         email: req.body.email,
         password: req.body.password
     }) 
