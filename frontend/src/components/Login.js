@@ -51,6 +51,7 @@ class Login extends Component {
 
     render() {
         const {errors} = this.state;
+console.log(errors)
         return(
         <div className="container" style={{ marginTop: '50px', width: '700px'}}>
             <h2 style={{marginBottom: '40px'}}>Login</h2>
